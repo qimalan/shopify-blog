@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { compileMDX } from "next-mdx-remote/rsc";
 import rehypePrettyCode from "rehype-pretty-code";
 

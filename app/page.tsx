@@ -1,10 +1,12 @@
 "use client";
 
 import Link from "next/link";
+import { ContactCard } from "@/components/ContactCard";
 import { GridLines } from "@/components/GridLines";
 import { Header } from "@/components/Header";
 import { ProfileImage } from "@/components/ProfileImage";
 import { ScrollReveal } from "@/components/ScrollReveal";
+import { SectionTitle } from "@/components/SectionTitle";
 import { TechStackIcon } from "@/components/TechStackIcon";
 import { siteConfig, techStack } from "@/data/site";
 export default function Home() {
@@ -21,9 +23,7 @@ export default function Home() {
 							<ScrollReveal delay={0}>
 								<div className="flex items-center gap-4">
 									<div className="h-px w-8 md:w-12 bg-charcoal/30" />
-									<span className="text-[10px] uppercase tracking-[0.3em] text-warm-grey">
-										Shopify Developer
-									</span>
+									<SectionTitle as="span">Shopify Developer</SectionTitle>
 								</div>
 							</ScrollReveal>
 							<ScrollReveal delay={0.1}>
@@ -65,9 +65,7 @@ export default function Home() {
 					{/* Tech Stack */}
 					<ScrollReveal>
 						<section className="space-y-6">
-							<h2 className="text-[10px] uppercase tracking-[0.3em] text-warm-grey">
-								技术栈
-							</h2>
+							<SectionTitle>技术栈</SectionTitle>
 							<div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:flex lg:flex-wrap gap-3 md:gap-4">
 								{techStack.map((tech) => (
 									<div
@@ -87,36 +85,20 @@ export default function Home() {
 					{/* Contact */}
 					<ScrollReveal>
 						<section className="space-y-6">
-							<h2 className="text-[10px] uppercase tracking-[0.3em] text-warm-grey">
-								联系方式
-							</h2>
+							<SectionTitle>联系方式</SectionTitle>
 							<div className="flex flex-col lg:flex-row lg:items-center gap-6 lg:gap-10">
 								{/* Contact Cards */}
 								<div className="flex flex-col md:flex-row gap-6">
-									{/* WeChat */}
-									<div className="inline-flex items-center gap-6 md:gap-8 p-6 md:p-8 border border-charcoal/10 rounded-lg shadow-[0_4px_20px_rgba(0,0,0,0.06)] bg-white/50 backdrop-blur-sm">
-										<div className="w-32 h-32 md:w-36 md:h-36 bg-charcoal flex items-center justify-center rounded-md">
-											{/* WeChat QR Code placeholder */}
-											<span className="text-alabaster text-xs">微信二维码</span>
-										</div>
-										<div className="space-y-2">
-											<p className="text-charcoal font-medium">微信</p>
-											<p className="text-warm-grey text-sm">
-												{siteConfig.wechat}
-											</p>
-										</div>
-									</div>
-									{/* QQ */}
-									<div className="inline-flex items-center gap-6 md:gap-8 p-6 md:p-8 border border-charcoal/10 rounded-lg shadow-[0_4px_20px_rgba(0,0,0,0.06)] bg-white/50 backdrop-blur-sm">
-										<div className="w-32 h-32 md:w-36 md:h-36 bg-charcoal flex items-center justify-center rounded-md">
-											{/* QQ QR Code placeholder */}
-											<span className="text-alabaster text-xs">QQ二维码</span>
-										</div>
-										<div className="space-y-2">
-											<p className="text-charcoal font-medium">QQ</p>
-											<p className="text-warm-grey text-sm">{siteConfig.qq}</p>
-										</div>
-									</div>
+									<ContactCard
+										type="wechat"
+										id={siteConfig.wechat}
+										qrPlaceholder="微信二维码"
+									/>
+									<ContactCard
+										type="qq"
+										id={siteConfig.qq}
+										qrPlaceholder="QQ二维码"
+									/>
 								</div>
 								{/* CTA Text */}
 								<div className="lg:pl-4 lg:border-l lg:border-charcoal/10 lg:ml-auto text-center">

@@ -9,7 +9,7 @@ export function BlogCard({ post }: BlogCardProps) {
   return (
     <Link href={`/blog/${post.slug}`} className="group block">
       {/* Cover Image */}
-      <div className="relative aspect-4/5 overflow-hidden mb-6 shadow-[0_4px_20px_rgba(0,0,0,0.06)] group-hover:shadow-[0_8px_32px_rgba(0,0,0,0.12)] transition-shadow duration-700">
+      <div className="relative aspect-3/4 md:aspect-4/5 overflow-hidden mb-6 shadow-[0_4px_20px_rgba(0,0,0,0.06)] group-hover:shadow-[0_8px_32px_rgba(0,0,0,0.12)] transition-shadow duration-700">
         <div className="absolute inset-0 bg-taupe grayscale group-hover:grayscale-0 transition-all duration-[1500ms]" />
         {/* Placeholder - replace with actual cover images */}
         <div className="absolute inset-0 flex items-center justify-center text-warm-grey text-sm">

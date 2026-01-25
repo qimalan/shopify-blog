@@ -4,6 +4,7 @@ export const siteConfig = {
 	description:
 		"专注于 Shopify 生态系统的独立开发者，提供高质量的主题定制与应用开发服务。",
 	wechat: "your_wechat_id", // Replace with your WeChat ID
+	qq: "your_qq_number", // Replace with your QQ number
 	profileImage: "/profile.jpg",
 	profileImageAlt: "Profile photo of Shopify Developer",
 };

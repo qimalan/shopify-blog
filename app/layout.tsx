@@ -1,16 +1,19 @@
 import type { Metadata } from "next";
-import { Inter, Playfair_Display } from "next/font/google";
+import { DM_Serif_Display, Outfit } from "next/font/google";
+import { Footer } from "@/components/Footer";
 import "./globals.css";
+import Particles from "@/components/Particles";
 
-const inter = Inter({
+const outfit = Outfit({
 	subsets: ["latin"],
-	variable: "--font-inter",
+	variable: "--font-outfit",
 	display: "swap",
 });
 
-const playfair = Playfair_Display({
+const dmSerif = DM_Serif_Display({
 	subsets: ["latin"],
-	variable: "--font-playfair",
+	weight: "400",
+	variable: "--font-dm-serif",
 	display: "swap",
 });
 
@@ -25,8 +28,37 @@ export default function RootLayout({
 	children: React.ReactNode;
 }>) {
 	return (
-		<html lang="zh-CN" className={`${inter.variable} ${playfair.variable}`}>
-			<body className="antialiased">{children}</body>
+		<html lang="zh-CN" className={`${outfit.variable} ${dmSerif.variable}`}>
+			<head>
+				<link
+					rel="stylesheet"
+					href="https://cdn.jsdelivr.net/npm/lxgw-neoxihei-webfont@1.1.0/style.css"
+				/>
+			</head>
+			<body className="antialiased">
+				<div
+					style={{
+						width: "100%",
+						height: "100vh",
+						position: "absolute",
+						zIndex: -1,
+					}}
+				>
+					<Particles
+						particleColors={["#d4af37"]}
+						particleCount={1000}
+						particleSpread={10}
+						particleBaseSize={80}
+						moveParticlesOnHover={false}
+						alphaParticles={false}
+						disableRotation
+						speed={0.2}
+						pixelRatio={1}
+					/>
+				</div>
+				{children}
+				<Footer />
+			</body>
 		</html>
 	);
 }

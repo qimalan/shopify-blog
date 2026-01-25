@@ -51,7 +51,7 @@ export default function Home() {
 						</div>
 
 						{/* Profile Image */}
-						<div className="lg:w-auto w-2/3 mx-auto lg:mx-0">
+						<div className="w-full lg:w-auto lg:ml-[60px]">
 							<div className="relative aspect-[9/16] lg:h-[700px] lg:w-auto w-full">
 								<Image
 									src={siteConfig.profileImage}

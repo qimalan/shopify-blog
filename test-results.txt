@@ -1,5 +1,0 @@
-✓ Desktop: Image on right, vertically centered
-✓ Mobile: Image below text, centered, 2/3 width
-✓ Aspect ratio: 9:16 maintained on all breakpoints
-✓ Image optimization: Next.js Image component working
-✓ Border and shadow: Visible and subtle

@@ -1,9 +1,7 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
-@custom-variant dark (&:is(.dark *));
-
-@theme inline {
+@theme {
   /* Luxury/Editorial Color Palette */
   --color-alabaster: #F9F8F6;
   --color-charcoal: #1A1A1A;
@@ -66,8 +64,10 @@ body {
 }
 
 /* Custom Utilities */
-@utility text-balance {
-  text-wrap: balance;
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
 }
 
 /* Drop Cap */

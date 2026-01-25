@@ -29,7 +29,7 @@ export function Button({
 	const content = (
 		<>
 			{variant === "primary" && (
-				<span className="absolute inset-0 bg-gold -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-[cubic-bezier(0.25,0.46,0.45,0.94)]" />
+				<span className="absolute inset-0 bg-gold -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-luxury" />
 			)}
 			<span className="relative z-10">{children}</span>
 		</>

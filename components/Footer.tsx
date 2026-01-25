@@ -47,7 +47,7 @@ export function Footer() {
 
 				{/* Decorative Line */}
 				<div className="mt-12 flex justify-center">
-					<div className="h-px w-16 bg-gradient-to-r from-transparent via-charcoal/20 to-transparent" />
+					<div className="h-px w-16 bg-linear-to-r from-transparent via-charcoal/20 to-transparent" />
 				</div>
 			</div>
 		</footer>

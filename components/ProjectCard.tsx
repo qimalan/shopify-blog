@@ -1,5 +1,4 @@
 import { ArrowUpRight } from "lucide-react";
-import Image from "next/image";
 import type { Project } from "@/data/projects";
 
 interface ProjectCardProps {
@@ -23,7 +22,7 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
 			<div className="relative aspect-4/3 md:aspect-video overflow-hidden mb-6 md:mb-8 shadow-[0_4px_20px_rgba(0,0,0,0.06)] group-hover:shadow-[0_8px_32px_rgba(0,0,0,0.12)] transition-shadow duration-700">
 				<div className="absolute inset-0 bg-taupe" />
 				{/* Placeholder - replace with actual project images */}
-				<div className="absolute inset-0 flex items-center justify-center text-warm-grey text-sm grayscale group-hover:grayscale-0 transition-all duration-[1500ms]">
+				<div className="absolute inset-0 flex items-center justify-center text-warm-grey text-sm grayscale group-hover:grayscale-0 transition-all duration-1500">
 					Project Image
 				</div>
 				<div className="absolute inset-0 shadow-[inset_0_0_0_1px_rgba(0,0,0,0.04)]" />

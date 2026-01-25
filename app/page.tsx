@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { GridLines } from "@/components/GridLines";
 import { Header } from "@/components/Header";
 import Particles from "@/components/Particles";
@@ -30,21 +31,38 @@ export default function Home() {
 			<main className="min-h-screen flex flex-col justify-center px-8 md:px-16 py-20 md:py-24 overflow-hidden">
 				<div className="max-w-300 mx-auto w-full space-y-16 md:space-y-20">
 					{/* Hero / Personal Intro */}
-					<section className="space-y-6">
-						<div className="flex items-center gap-4">
-							<div className="h-px w-8 md:w-12 bg-charcoal/30" />
-							<span className="text-[10px] uppercase tracking-[0.3em] text-warm-grey">
-								Shopify Developer
-							</span>
+					<section className="flex flex-col lg:flex-row lg:items-center lg:gap-16 gap-8">
+						{/* Text Content */}
+						<div className="space-y-6 lg:flex-1">
+							<div className="flex items-center gap-4">
+								<div className="h-px w-8 md:w-12 bg-charcoal/30" />
+								<span className="text-[10px] uppercase tracking-[0.3em] text-warm-grey">
+									Shopify Developer
+								</span>
+							</div>
+							<h1 className="font-serif text-4xl md:text-6xl lg:text-7xl leading-[0.95] tracking-tight text-charcoal">
+								专注 Shopify
+								<br />
+								<span className="italic text-gold">主题与应用开发</span>
+							</h1>
+							<p className="text-base md:text-lg text-warm-grey max-w-lg leading-relaxed">
+								{siteConfig.description}
+							</p>
 						</div>
-						<h1 className="font-serif text-4xl md:text-6xl lg:text-7xl leading-[0.95] tracking-tight text-charcoal">
-							专注 Shopify
-							<br />
-							<span className="italic text-gold">主题与应用开发</span>
-						</h1>
-						<p className="text-base md:text-lg text-warm-grey max-w-lg leading-relaxed">
-							{siteConfig.description}
-						</p>
+
+						{/* Profile Image */}
+						<div className="lg:w-auto w-2/3 mx-auto lg:mx-0">
+							<div className="relative aspect-[9/16] lg:h-[700px] lg:w-auto w-full">
+								<Image
+									src={siteConfig.profileImage}
+									alt={siteConfig.profileImageAlt}
+									fill
+									priority
+									quality={90}
+									className="object-cover border border-charcoal/10 shadow-sm"
+								/>
+							</div>
+						</div>
 					</section>
 
 					{/* Tech Stack */}

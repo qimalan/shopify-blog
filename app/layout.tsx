@@ -41,14 +41,15 @@ export default function RootLayout({
 						width: "100%",
 						height: "100vh",
 						position: "absolute",
+						top: 80,
 						zIndex: -1,
 					}}
 				>
 					<Particles
 						particleColors={["#d4af37"]}
-						particleCount={1000}
+						particleCount={900}
 						particleSpread={10}
-						particleBaseSize={80}
+						particleBaseSize={60}
 						moveParticlesOnHover={false}
 						alphaParticles={false}
 						disableRotation

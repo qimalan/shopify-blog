@@ -1,0 +1,58 @@
+---
+title: "Shopify 主题开发入门指南"
+date: "2024-01-15"
+excerpt: "从零开始学习 Shopify 主题开发，掌握 Liquid 模板语言和主题架构的核心概念。"
+cover: "/images/blog/shopify-theme.jpg"
+---
+
+作为一名 Shopify 开发者，掌握主题开发是最基础也是最重要的技能之一。本文将带你了解 Shopify 主题开发的核心概念。
+
+## Liquid 模板语言
+
+Liquid 是 Shopify 的模板语言，由 Ruby 编写。它有三个主要组成部分：
+
+### 对象
+
+对象告诉 Liquid 在页面上显示什么内容。对象和变量名用双花括号包裹：
+
+```liquid
+{{ product.title }}
+```
+
+### 标签
+
+标签用于创建逻辑和控制流。它们用花括号和百分号包裹：
+
+```liquid
+{% if product.available %}
+  <p>产品有货</p>
+{% else %}
+  <p>产品缺货</p>
+{% endif %}
+```
+
+### 过滤器
+
+过滤器用于修改对象的输出。它们用管道符 `|` 分隔：
+
+```liquid
+{{ product.title | upcase }}
+{{ product.price | money }}
+```
+
+## 主题架构
+
+一个标准的 Shopify 主题包含以下目录结构：
+
+- `assets/` - CSS、JavaScript 和图片文件
+- `config/` - 主题设置配置
+- `layout/` - 布局模板
+- `sections/` - 可重用的模块化组件
+- `snippets/` - 可复用的代码片段
+- `templates/` - 页面模板
+
+> 好的主题架构是可维护性的基础。花时间规划你的组件结构，会在后期节省大量时间。
+
+## 下一步
+
+掌握了这些基础知识后，你可以开始探索更高级的主题，比如 Section 开发、主题设置 API 和 Storefront API。

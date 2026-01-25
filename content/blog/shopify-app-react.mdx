@@ -1,0 +1,71 @@
+---
+title: "使用 React 构建 Shopify App"
+date: "2024-01-20"
+excerpt: "学习如何使用 React 和 Shopify App Bridge 构建现代化的 Shopify 应用程序。"
+cover: "/images/blog/shopify-app.jpg"
+---
+
+Shopify App 开发是扩展 Shopify 功能的强大方式。本文将介绍如何使用 React 构建一个现代化的 Shopify 应用。
+
+## 技术栈选择
+
+推荐的技术栈：
+
+- **React** - 用户界面
+- **Polaris** - Shopify 的设计系统
+- **App Bridge** - 与 Shopify Admin 集成
+- **GraphQL** - 数据查询
+
+## 快速开始
+
+使用 Shopify CLI 创建新应用：
+
+```bash
+npm init @shopify/app@latest
+```
+
+这会创建一个包含所有必要配置的项目模板。
+
+## App Bridge 集成
+
+App Bridge 让你的应用能够与 Shopify Admin 无缝集成：
+
+```typescript
+import { useAppBridge } from "@shopify/app-bridge-react";
+import { Redirect } from "@shopify/app-bridge/actions";
+
+function MyComponent() {
+  const app = useAppBridge();
+
+  const handleRedirect = () => {
+    const redirect = Redirect.create(app);
+    redirect.dispatch(Redirect.Action.ADMIN_PATH, "/products");
+  };
+
+  return <button onClick={handleRedirect}>查看产品</button>;
+}
+```
+
+## 使用 Polaris 组件
+
+Polaris 提供了与 Shopify Admin 风格一致的 UI 组件：
+
+```tsx
+import { Page, Card, Button } from "@shopify/polaris";
+
+function ProductPage() {
+  return (
+    <Page title="产品管理">
+      <Card>
+        <Button primary>添加产品</Button>
+      </Card>
+    </Page>
+  );
+}
+```
+
+> 使用 Polaris 不仅能保持视觉一致性，还能确保你的应用符合 Shopify 的可访问性标准。
+
+## 总结
+
+构建 Shopify App 需要理解 Shopify 的生态系统和最佳实践。从小功能开始，逐步扩展你的应用能力。

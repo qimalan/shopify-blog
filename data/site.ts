@@ -3,6 +3,8 @@ export const siteConfig = {
   title: "Shopify 主题与应用开发",
   description: "专注于 Shopify 生态系统的独立开发者，提供高质量的主题定制与应用开发服务。",
   wechat: "your_wechat_id", // Replace with your WeChat ID
+  profileImage: "/profile.jpg",
+  profileImageAlt: "Profile photo of Shopify Developer",
 };
 
 export const techStack = [

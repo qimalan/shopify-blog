@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import type { BlogPost } from "@/lib/blog";
 
@@ -12,10 +13,19 @@ export function BlogCard({ post }: BlogCardProps) {
 			<div className="relative aspect-16/10 md:aspect-3/2 overflow-hidden mb-6 shadow-[0_4px_20px_rgba(0,0,0,0.06)] group-hover:shadow-[0_8px_32px_rgba(0,0,0,0.12)] transition-shadow duration-700">
 				<div className="absolute inset-0 bg-taupe grayscale group-hover:grayscale-0 transition-all duration-1500" />
 				{/* Placeholder - replace with actual cover images */}
-				<div className="absolute inset-0 flex items-center justify-center text-warm-grey text-sm">
+				{/* <div className="absolute inset-0 flex items-center justify-center text-warm-grey text-sm">
 					Cover
-				</div>
-				<div className="absolute inset-0 shadow-[inset_0_0_0_1px_rgba(0,0,0,0.04)] group-hover:scale-105 transition-transform duration-1500" />
+				</div> */}
+				{post.cover ? (
+					<Image
+						src={post.cover}
+						alt={post.title}
+						fill
+						className="object-cover transition-transform duration-1500 group-hover:scale-105"
+					/>
+				) : (
+					<div className="absolute inset-0 shadow-[inset_0_0_0_1px_rgba(0,0,0,0.04)] group-hover:scale-105 transition-transform duration-1500" />
+				)}
 			</div>
 
 			{/* Date */}

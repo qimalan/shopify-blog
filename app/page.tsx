@@ -23,12 +23,12 @@ export default function Home() {
 							<ScrollReveal delay={0}>
 								<div className="flex items-center gap-4">
 									<div className="h-px w-8 md:w-12 bg-charcoal/30" />
-									<SectionTitle as="span">Shopify Developer</SectionTitle>
+									<SectionTitle as="span">Shopify Full-Stack Developer</SectionTitle>
 								</div>
 							</ScrollReveal>
 							<ScrollReveal delay={0.1}>
 								<h1 className="font-serif text-4xl md:text-6xl lg:text-7xl leading-[0.95] tracking-tight text-charcoal">
-									专注 Shopify
+									专注 TS 全栈 & Shopify
 									<br />
 									<span className="italic text-gold">主题与应用开发</span>
 								</h1>
@@ -92,13 +92,13 @@ export default function Home() {
 									<ContactCard
 										type="wechat"
 										id={siteConfig.wechat}
-										qrPlaceholder="微信二维码"
+										qrPlaceholder="/wechat.jpg"
 									/>
-									<ContactCard
+									{/* <ContactCard
 										type="qq"
 										id={siteConfig.qq}
 										qrPlaceholder="QQ二维码"
-									/>
+									/> */}
 								</div>
 								{/* CTA Text */}
 								<div className="lg:pl-4 lg:border-l lg:border-charcoal/10 lg:ml-auto text-center">

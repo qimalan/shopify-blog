@@ -1,4 +1,5 @@
 import { ArrowLeft } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { GridLines } from "@/components/GridLines";
@@ -55,10 +56,13 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
 					{/* Cover Image */}
 					{post.cover && (
-						<div className="relative aspect-21/9 overflow-hidden mb-12 md:mb-16 shadow-[0_8px_32px_rgba(0,0,0,0.12)]">
-							<div className="absolute inset-0 bg-taupe" />
-							<div className="absolute inset-0 shadow-[inset_0_0_0_1px_rgba(0,0,0,0.06)]" />
-						</div>
+						<Image
+							src={post.cover}
+							alt={post.title}
+							width={1200}
+							height={600}
+							className="w-full h-auto object-cover"
+						/>
 					)}
 
 					{/* Content */}

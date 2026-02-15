@@ -9,6 +9,14 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    id: "0",
+    title: "Goflash",
+    description: "面向海外的购物返利电商平台。",
+    image: "/goflash.png",
+    url: "https://goflashdeals.com/",
+    tags: ["React", "Nextjs"],
+  },
+  {
     id: "1",
     title: "54D Theme",
     description: "为销售健身课程的品牌搭建的 Shopify 主题。",

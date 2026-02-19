@@ -16,21 +16,21 @@ export const projects: Project[] = [
     url: "https://goflashdeals.com/",
     tags: ["React", "Nextjs"],
   },
-  {
-    id: "1",
-    title: "变体级别补货通知 App",
-    description: "为 Shopify 品牌开发的变体级别补货通知应用，提升客户购物体验。",
-    image: "/project3.png",
-    url: "https://landing.54d.com/",
-    tags: ["Shopify App", "React"],
-  },
+  // {
+  //   id: "1",
+  //   title: "变体级别补货通知 App",
+  //   description: "为 Shopify 品牌开发的变体级别补货通知应用，提升客户购物体验。",
+  //   image: "/project3.png",
+  //   url: "https://landing.54d.com/",
+  //   tags: ["Shopify App", "React"],
+  // },
   {
     id: "2",
     title: "54D Theme",
     description: "为销售健身课程的品牌搭建的 Shopify 主题。",
     image: "/project1.png",
     url: "https://landing.54d.com/",
-    tags: ["Shopify Theme", "Liquid"],
+    tags: ["Shopify Theme", "Custom Design"],
   },
   {
     id: "3",
@@ -38,6 +38,6 @@ export const projects: Project[] = [
     description: "为二手奢侈品品牌打造的 Shopify 独立站，支持多渠道销售与库存管理。",
     image: "/project2.png",
     url: "https://miloura.com/",
-    tags: ["Shopify Theme", "Custom Design"],
+    tags: ["Shopify Theme", "Liquid"],
   },
 ];

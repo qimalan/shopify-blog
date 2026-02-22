@@ -28,9 +28,9 @@ export default function Home() {
 							</ScrollReveal>
 							<ScrollReveal delay={0.1}>
 								<h1 className="font-serif text-4xl md:text-6xl lg:text-7xl leading-[0.95] tracking-tight text-charcoal">
-									专注 TS 全栈 & Shopify
+									聚焦 TS 全栈 & Shopify
 									<br />
-									<span className="italic text-gold">主题与应用开发</span>
+									<span className="italic text-gold">生态开发</span>
 								</h1>
 							</ScrollReveal>
 							<ScrollReveal delay={0.2}>

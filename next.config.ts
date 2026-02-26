@@ -3,7 +3,7 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   /* config options here */
   output: "export",
-  basePath: "https://github.com/qimalan/shopify-blog",
+  basePath: "/shopify-blog",
   images: {
     unoptimized: true
   }

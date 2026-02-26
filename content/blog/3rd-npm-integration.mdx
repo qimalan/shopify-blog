@@ -2,7 +2,7 @@
 title: "Shopify App 集成第三方 NPM 包"
 date: "2024-02-20"
 excerpt: "学习如何在 Shopify App 中集成第三方 NPM 包。"
-cover: "/blog/3rd-npm.jpg"
+cover: "/shopify-blog/blog/3rd-npm.jpg"
 ---
 
 在开发 Shopify Theme Extension 的过程中，我们经常会遇到这样一个问题：前端需要使用某个第三方 JavaScript SDK（例如聊天 IM SDK、加密库、可视化库等），但是Theme Extension并不能像普通 React/Vue 项目一样直接使用 npm install 然后 import 来调用。
@@ -11,6 +11,7 @@ cover: "/blog/3rd-npm.jpg"
 ## 背景问题
 
 推荐在一个实际的 Shopify 项目中，我需要在店铺前台调用一个第三方 SDK（例如 OpenIM、统计分析库、动画库等）。直接 npm install 引入当然是不行的，会报错。那我该怎么办？我总结了一条通用的思路
+
 - 使用 Vite 先单独把第三方库打包成一个可用的单文件 JS
 - 再把这个JS放到Theme Extension的assets/目录下
 - 最后通过liquid文件在前台引入
@@ -18,41 +19,44 @@ cover: "/blog/3rd-npm.jpg"
 ## 解决方案
 
 ### 新建打包工程
+
 在Theme Extension之外，新建一个目录，用来专门打包第三方库，这里我用vite来打包（当然你也可以用webpack）。例如
 
 ```bash
 mkdir sdk-build
-cd sdk-build 
-npm init -y 
+cd sdk-build
+npm init -y
 npm install openim-sdk-js-wasm vite
 ```
 
 ### 配置 vite.config.js
+
 在sdk-build目录下新建vite.config.js
 
 ```javascript
-import { defineConfig } from 'vite'
-import { resolve } from 'path'
+import { defineConfig } from "vite";
+import { resolve } from "path";
 
 export default defineConfig({
   build: {
     lib: {
-      entry: resolve(__dirname, 'src/main.js'),
-      name: 'OpenIMSDK',
-      fileName: 'openim-sdk',
-      formats: ['iife']
-    }
-  }
-})
+      entry: resolve(__dirname, "src/main.js"),
+      name: "OpenIMSDK",
+      fileName: "openim-sdk",
+      formats: ["iife"],
+    },
+  },
+});
 ```
 
 ### 编写入口文件
+
 在src/index.js中引入第三方库并导出
 
 ```javascript
-import OpenIMSDK from 'openim-sdk-js-wasm'
+import OpenIMSDK from "openim-sdk-js-wasm";
 
-export default OpenIMSDK
+export default OpenIMSDK;
 ```
 
 ### 执行打包
@@ -60,18 +64,18 @@ export default OpenIMSDK
 ```bash
 npm run build
 ```
+
 Vite会在dist/目录下生成一个文件
 
 ```bash
 dist/openim-sdk.umd.js
 ```
-这个就是我们最终需要放到Shopify Theme Extension的文件
 
+这个就是我们最终需要放到Shopify Theme Extension的文件
 
 ### 放入Theme Extension
 
 把 openim-sdk.umd.js 复制到Theme Extension的assets/目录下
-
 
 ### 在 Liquid 文件中使用
 
@@ -87,6 +91,3 @@ document.addEventListener("DOMContentLoaded", function() {
 ```
 
 这样，你就能在Theme Extension的前台环境 中，正常使用第三方 SDK 了。
-
-
-

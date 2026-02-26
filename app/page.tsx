@@ -92,7 +92,7 @@ export default function Home() {
 									<ContactCard
 										type="wechat"
 										id={siteConfig.wechat}
-										qrPlaceholder="/wechat.jpg"
+										qrPlaceholder="/shopify-blog/wechat.jpg"
 									/>
 									{/* <ContactCard
 										type="qq"

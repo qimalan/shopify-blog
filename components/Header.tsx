@@ -28,7 +28,7 @@ export function Header() {
 							href="/"
 							className="font-serif flex gap-1.5 items-center text-xl md:text-2xl tracking-tight text-charcoal transition-colors duration-500 hover:text-gold"
 						>
-							<Image src="/logo2.png" alt="Logo" width={40} height={40} />
+							<Image src="/shopify-blog/logo2.png" alt="Logo" width={40} height={40} />
 							Sean.dev
 						</Link>
 
